@@ -55,6 +55,7 @@
         [coordinator coordinateReadingItemAtURL:directoryURL options:NSFileCoordinatorReadingForUploading error:nil byAccessor:^(NSURL * _Nonnull newURL) {
             [[NSFileManager defaultManager] moveItemAtURL:newURL toURL:zipURL error:nil];
         }];
+        _isSelected = !_isSelected;
     }else{
         NSURL *directoryURL = [NSURL fileURLWithPath:_txtList.stringValue];
         NSURL *zipURL = [NSURL fileURLWithPath:_txtZipFile.stringValue];
@@ -67,5 +68,6 @@
     alert.informativeText = @"Zip is created successfully";
     alert.messageText = @"Information Message";
     [alert runModal];
+   
 }
 @end
