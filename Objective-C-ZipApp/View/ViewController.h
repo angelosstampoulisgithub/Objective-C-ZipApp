@@ -6,7 +6,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import "Helper.h"
 @interface ViewController : NSViewController<NSTableViewDelegate,NSTableViewDataSource>
 @property (weak) IBOutlet NSTextField *txtList;
 @property (weak) IBOutlet NSTextField *txtZipFile;
@@ -15,7 +15,9 @@
 @property (weak) IBOutlet NSButton *btnList;
 @property (weak) IBOutlet NSTableView *tableView;
 @property NSMutableArray *array;
-
+@property NSInteger selectedRow;
+@property Helper *helper;
+@property bool isSelected;
 - (IBAction)btnCreateZip:(id)sender;
 
 @end
